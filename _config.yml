@@ -2,8 +2,7 @@ title: Denis Korchagin
 email: denis.korchagin.1995@gmail.com
 description: >-
   A personal blog on software development, with occasional insights into psychology and workplace dynamics.
-baseurl: ""
-url: "http://127.0.0.1:4000/"
+url: "https://denis-korchagin95.github.io/"
 baseurl: "/devblog"
 github_username: denis-korchagin95
 linkedin_username: denis-korchagin
