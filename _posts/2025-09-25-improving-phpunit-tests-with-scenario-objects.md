@@ -24,8 +24,7 @@ public function aUserCanFilterTasksByProjectName(): void
 {
     $entityBuilder = $this->getEntityBuilder();
 
-    $person = $entityBuilder->asPersonBuilder()->withName('Alex')->build('person');
-    $user = $entityBuilder->asUserBuilder()->withPerson($person)->build('user');
+    $user = $entityBuilder->asUserBuilder()->withName('Alex')->build('user');
 
     $today = new DateTimeImmutable('today');
 
@@ -34,7 +33,7 @@ public function aUserCanFilterTasksByProjectName(): void
         ->withTitle('Buy sponges and dish soap')
         ->withStatus('open')
         ->withPriority('normal')
-        ->withAssignee($person)
+        ->withAssignee($user)
         ->withDueDate($today)
         ->withProject(
             $entityBuilder
@@ -52,7 +51,7 @@ public function aUserCanFilterTasksByProjectName(): void
         ->withTitle('Rake leaves in the backyard')
         ->withStatus('open')
         ->withPriority('low')
-        ->withAssignee($person)
+        ->withAssignee($user)
         ->withDueDate($today)
         ->withProject(
             $entityBuilder
@@ -203,8 +202,7 @@ With `SearchTaskScenario`, the test shrinks dramatically:
 public function aUserCanFilterTasksByProjectName(): void
 {
     $entityBuilder = $this->getEntityBuilder();
-    $person = $entityBuilder->asPersonBuilder()->withName('Alex')->build('person');
-    $user = $entityBuilder->asUserBuilder()->withPerson($person)->build('user');
+    $user = $entityBuilder->asUserBuilder()->withName('Alex')->build('user');
     $today = new DateTimeImmutable('today');
 
     $falseScenario = SearchTaskScenario::given($entityBuilder, $user)
